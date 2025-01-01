@@ -1,4 +1,4 @@
-import Dish from "./dish.js";
+import { Dish, dishes } from "./dish.js";
 
 class Menu {
   constructor() {
@@ -10,12 +10,10 @@ class Menu {
 }
 
 const menu = new Menu();
-const brusselSprouts = new Dish(
-  "Roasted Brussel Sprouts",
-  "Roasted Brussel Sprouts with a balsamic Vinegarette",
-  "12.99"
-);
-menu.addDish(brusselSprouts);
+
+dishes.forEach((dish) => {
+  menu.addDish(dish);
+});
 
 function displayMenu(menu) {
   const menuDiv = document.createElement("div");
